@@ -25,7 +25,7 @@ require_once('verificar-permissao.php');
 						<th>Estoque</th>
 						<th>Valor Compra</th>
 						<th>Valor Venda</th>
-						<th>Fornecedor</th>
+						<th>Produtor</th>
 						<th>Foto</th>
 						<th>Ações</th>
 						
@@ -227,6 +227,7 @@ if(@$_GET['funcao'] == "editar"){
 					<input name="id" type="hidden" value="<?php echo @$_GET['id'] ?>">
 
 					<input name="antigo" type="hidden" value="<?php echo @$nome ?>">
+					<input name="antigo2" type="hidden" value="<?php echo @$codigo ?>">
 
 
 				</div>
@@ -325,7 +326,7 @@ if(@$_GET['funcao'] == "editar"){
 				<div class="modal-body">
 
 					<div class="mb-3">
-						<label for="exampleFormControlInput1" class="form-label">Fornecedor</label>
+						<label for="exampleFormControlInput1" class="form-label">Produtor</label>
 						<select class="form-select mt-1" aria-label="Default select example" name="fornecedor">
 							<?php 
 							$query = $pdo->query("SELECT * from fornecedores order by nome asc");

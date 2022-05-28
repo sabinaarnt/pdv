@@ -37,6 +37,13 @@ $res->bindValue(":usuario", $id_usuario);
 $res->bindValue(":fornecedor", $fornecedor);
 $res->bindValue(":total", $total_compra);
 $res->execute();
+$id_compra = $pdo->lastInsertId();
+
+
+$res = $pdo->prepare("INSERT contas_pagar SET vencimento = curDate(), descricao = 'Compra de Produtos', valor = :valor, data = curDate(), usuario = :usuario, pago = 'Não', arquivo = 'sem-foto.jpg', id_compra = '$id_compra'");
+$res->bindValue(":usuario", $id_usuario);
+$res->bindValue(":valor", $total_compra);
+$res->execute();
 
 echo 'Salvo com Sucesso!';
 ?>

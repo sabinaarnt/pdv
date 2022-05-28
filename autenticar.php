@@ -25,10 +25,10 @@ if(@count($res_con) > 0){
 	if($nivel == 'Administrador'){
 		echo " <script language='javascript'>window.location='painel-adm'</script>";
 	}
-	if($nivel == 'Operador'){
-		echo " <script language='javascript'>window.location='painel-operador'</script>";
+	if($nivel == 'Tesoureiro'){
+		echo " <script language='javascript'>window.location='painel-tesoureiro'</script>";
 	}
-	if($nivel == 'Vendedor'){
+	if($nivel == 'Operador'){
 		echo " <script language='javascript'>window.location='painel-operador'</script>";
 			}
 }else {
